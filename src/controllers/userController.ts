@@ -1,17 +1,28 @@
-import { Request, Response } from "express";
+import { Request, Response} from 'express'
+import { createStudentFunc, createTeacherFunc } from "../services/userService";
+import TeacherDTO  from "../DTO/teacherDto";
+import StudentDTO from '../DTO/studentDto';
 
-export const createTeacher = async (req: Request, res: Response): Promise<void> => {
+export const createTeacher = async (req: Request<any, any, TeacherDTO>, res: Response): Promise<void> => {
     try {
-        
+        await createTeacherFunc(req.body)
+        res.status(201).json({
+            massage: "Teacher Created"
+        })
     } catch (err) {
+        console.log(err);
         res.status(400).json(err)
     }
 };
 
-export const createStudent = async (req: Request, res: Response): Promise<void> => {
+export const createStudent = async (req: Request<any, any, StudentDTO>, res: Response): Promise<void> => {
     try {
-        
+        await createStudentFunc(req.body)
+        res.status(201).json({
+            massage: "Student Created"
+        })
     } catch (err) {
+        console.log(err);
         res.status(400).json(err)
     }
 };
@@ -19,63 +30,71 @@ export const createStudent = async (req: Request, res: Response): Promise<void> 
 export const getStudents = async (req: Request, res: Response): Promise<void> => {
     try {
         
-    } catch (err) {
-        res.status(400).json(err)
+    } catch (err: any) {
+        console.log(err);
+        res.status(400).send(err.massage)
     }
 };
 
 export const addGrade = async (req: Request, res: Response): Promise<void> => {
     try {
         
-    } catch (err) {
-        res.status(400).json(err)
+    } catch (err: any) {
+        console.log(err);
+        res.status(400).send(err.massage)
     }
 };
 
 export const setGrade = async (req: Request, res: Response): Promise<void> => {
     try {
         
-    } catch (err) {
-        res.status(400).json(err)
+    } catch (err: any) {
+        console.log(err);
+        res.status(400).send(err.massage)
     }
 };
 
 export const getAverage = async (req: Request, res: Response): Promise<void> => {
     try {
         
-    } catch (err) {
-        res.status(400).json(err)
+    } catch (err: any) {
+        console.log(err);
+        res.status(400).send(err.massage)
     }
 };
 
 export const getAveragePerStudent = async (req: Request, res: Response): Promise<void> => {
     try {
         
-    } catch (err) {
-        res.status(400).json(err)
+    } catch (err: any) {
+        console.log(err);
+        res.status(400).send(err.massage)
     }
 };
 
 export const getAveragePerSubject = async (req: Request, res: Response): Promise<void> => {
     try {
         
-    } catch (err) {
-        res.status(400).json(err)
+    } catch (err: any) {
+        console.log(err);
+        res.status(400).send(err.massage)
     }
 };
 
 export const getStudentGrade = async (req: Request, res: Response): Promise<void> => {
     try {
         
-    } catch (err) {
-        res.status(400).json(err)
+    } catch (err: any) {
+        console.log(err);
+        res.status(400).send(err.massage)
     }
 };
 
 export const getMyGrade = async (req: Request, res: Response): Promise<void> => {
     try {
         
-    } catch (err) {
-        res.status(400).json(err)
+    } catch (err: any) {
+        console.log(err);
+        res.status(400).send(err.massage)
     }
 };

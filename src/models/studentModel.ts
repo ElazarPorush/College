@@ -6,6 +6,7 @@ export interface IStudent extends Document {
   password: string;
   email: string;
   classId: Types.ObjectId;
+  role: string,
   grades: object[]
 }
 
@@ -29,7 +30,10 @@ const StudentSchema = new Schema<IStudent>({
     type: Schema.Types.ObjectId,
     required: [true, "you need to sign to class!"],
   },
-  
+  role: {
+    type: String,
+    default: "Student"
+  },
   grades: [{
     subject: {
         type: String
