@@ -33,7 +33,7 @@ const StudentSchema = new mongoose_1.Schema({
     },
     password: {
         type: String,
-        required: [true, "you have to give us also password"]
+        required: [true, "password is required"]
     },
     email: {
         type: String,
