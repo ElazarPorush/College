@@ -13,7 +13,7 @@ export interface ITeacher extends Document {
   password: string;
   email: string;
   role: string
-  class: object;
+  class: IClass;
 }
 
 const classSchema = new Schema<IClass>({

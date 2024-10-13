@@ -35,3 +35,11 @@ export const createStudentFunc = async (Student: StudentDTO) => {
         throw err
     }
 }
+
+export const getStudentsFunc = async (teacher: typeof TeacherModel) => {
+    try {
+        // const students = StudentModel.find({classId: teacher.class._id})
+    } catch (err) {
+        throw err
+    }
+}

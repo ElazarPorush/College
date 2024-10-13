@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createStudentFunc = exports.createTeacherFunc = void 0;
+exports.getStudentsFunc = exports.createStudentFunc = exports.createTeacherFunc = void 0;
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const teacherModel_1 = __importDefault(require("../models/teacherModel"));
 const studentModel_1 = __importDefault(require("../models/studentModel"));
@@ -50,3 +50,12 @@ const createStudentFunc = (Student) => __awaiter(void 0, void 0, void 0, functio
     }
 });
 exports.createStudentFunc = createStudentFunc;
+const getStudentsFunc = (teacher) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        // const students = StudentModel.find({classId: teacher.class._id})
+    }
+    catch (err) {
+        throw err;
+    }
+});
+exports.getStudentsFunc = getStudentsFunc;
