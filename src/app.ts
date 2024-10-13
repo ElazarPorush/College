@@ -1,6 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
-// import connectDB from "./config/db";
+import connectDB from "./config/db";
 
 dotenv.config();
 
@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000;
 // Middleware
 // app.use(express.json());
 
-// connectDB();
+connectDB();
 
 app.use("/api/auth", () => {})
 app.use("/api/user", () => {})

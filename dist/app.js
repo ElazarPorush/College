@@ -5,13 +5,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const dotenv_1 = __importDefault(require("dotenv"));
-// import connectDB from "./config/db";
+const db_1 = __importDefault(require("./config/db"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const port = process.env.PORT || 3000;
 // Middleware
 // app.use(express.json());
-// connectDB();
+(0, db_1.default)();
 app.use("/api/auth", () => { });
 app.use("/api/user", () => { });
 app.listen(port, () => {
