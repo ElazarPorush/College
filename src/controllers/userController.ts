@@ -1,16 +1,26 @@
-import { Request, Response } from "express";
+import { Request, Response} from 'express'
+import { createStudentFunc, createTeacherFunc } from "../services/userService";
+import TeacherDTO  from "../DTO/teacherDto";
+import StudentDTO from '../DTO/studentDto';
 
-export const createTeacher = async (req: Request, res: Response): Promise<void> => {
+export const createTeacher = async (req: Request<any, any, TeacherDTO>, res: Response): Promise<void> => {
     try {
-        
+        await createTeacherFunc(req.body)
+        res.status(201).json({
+            massage: "Teacher Created"
+        })
     } catch (err) {
+        console.log(err);
         res.status(400).json(err)
     }
 };
 
-export const createStudent = async (req: Request, res: Response): Promise<void> => {
+export const createStudent = async (req: Request<any, any, StudentDTO>, res: Response): Promise<void> => {
     try {
-        
+        await createStudentFunc(req.body)
+        res.status(201).json({
+            massage: "Student Created"
+        })
     } catch (err) {
         res.status(400).json(err)
     }

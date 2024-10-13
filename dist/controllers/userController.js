@@ -10,16 +10,26 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getMyGrade = exports.getStudentGrade = exports.getAveragePerSubject = exports.getAveragePerStudent = exports.getAverage = exports.setGrade = exports.addGrade = exports.getStudents = exports.createStudent = exports.createTeacher = void 0;
+const userService_1 = require("../services/userService");
 const createTeacher = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
+        yield (0, userService_1.createTeacherFunc)(req.body);
+        res.status(201).json({
+            massage: "Teacher Created"
+        });
     }
     catch (err) {
+        console.log(err);
         res.status(400).json(err);
     }
 });
 exports.createTeacher = createTeacher;
 const createStudent = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
+        yield (0, userService_1.createStudentFunc)(req.body);
+        res.status(201).json({
+            massage: "Student Created"
+        });
     }
     catch (err) {
         res.status(400).json(err);
