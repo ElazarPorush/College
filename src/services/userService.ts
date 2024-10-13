@@ -6,13 +6,13 @@ import StudentDTO from '../DTO/studentDto'
 
 export const createTeacherFunc = async (teacher: TeacherDTO) => {
     try {
-        const { username, password, email, class : object} = teacher
+        const { username, password, email} = teacher
         const hashedPassword = await bcrypt.hash(password, 10)
         const dbTeacher = new TeacherModel({
             username,
             password: hashedPassword,
             email,
-            class: object
+            class: teacher.class
         })
         await dbTeacher.save()
     } catch (err) {

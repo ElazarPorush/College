@@ -19,25 +19,28 @@ const studentModel_1 = __importDefault(require("../models/studentModel"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const loginFromService = (user) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        let dbUser = yield teacherModel_1.default.find({ username: user.username });
+        let dbUser = yield teacherModel_1.default.findOne({ username: user.username });
         if (!dbUser) {
             dbUser = yield studentModel_1.default.find({ username: user.username });
         }
+        const password = dbUser.password;
         if (!dbUser)
             throw new Error("User was not found");
         if (!(yield bcrypt_1.default.compare(user.password, dbUser.password))) {
             throw new Error("wrong password");
         }
+        console.log("dw");
         const token = yield jsonwebtoken_1.default.sign({
             username: dbUser.username,
             role: dbUser.role
-        }, process.env.TOKEN, {
+        }, process.env.TOKEN_SECRET, {
             expiresIn: "3m"
         });
         return token;
     }
     catch (err) {
         console.log(err);
+        throw new Error(`${err}`);
     }
 });
 exports.loginFromService = loginFromService;

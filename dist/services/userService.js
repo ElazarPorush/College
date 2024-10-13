@@ -18,13 +18,13 @@ const teacherModel_1 = __importDefault(require("../models/teacherModel"));
 const studentModel_1 = __importDefault(require("../models/studentModel"));
 const createTeacherFunc = (teacher) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { username, password, email, class: object } = teacher;
+        const { username, password, email } = teacher;
         const hashedPassword = yield bcrypt_1.default.hash(password, 10);
         const dbTeacher = new teacherModel_1.default({
             username,
             password: hashedPassword,
             email,
-            class: object
+            class: teacher.class
         });
         yield dbTeacher.save();
     }

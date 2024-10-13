@@ -9,9 +9,9 @@ export const createTeacher = async (req: Request<any, any, TeacherDTO>, res: Res
         res.status(201).json({
             massage: "Teacher Created"
         })
-    } catch (err: any) {
+    } catch (err) {
         console.log(err);
-        res.status(400).send(err.massage)
+        res.status(400).json(err)
     }
 };
 
@@ -21,9 +21,9 @@ export const createStudent = async (req: Request<any, any, StudentDTO>, res: Res
         res.status(201).json({
             massage: "Student Created"
         })
-    } catch (err: any) {
+    } catch (err) {
         console.log(err);
-        res.status(400).send(err.massage)
+        res.status(400).json(err)
     }
 };
 

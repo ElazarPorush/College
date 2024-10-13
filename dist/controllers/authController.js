@@ -20,7 +20,7 @@ const login = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         });
     }
     catch (err) {
-        res.status(400).send(err.message);
+        res.status(400).json(err);
     }
 });
 exports.login = login;

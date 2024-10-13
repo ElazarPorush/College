@@ -8,7 +8,7 @@ export const login = async (req: Request, res: Response): Promise<void> => {
         res.json({
           message: `welcome ${req.body.username}! so good to see you!!`,
         });
-      } catch (err: any) {
-        res.status(400).send(err.message);
+      } catch (err) {
+        res.status(400).json(err);
       }
 };

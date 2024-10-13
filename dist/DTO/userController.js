@@ -20,7 +20,7 @@ const createTeacher = (req, res) => __awaiter(void 0, void 0, void 0, function* 
     }
     catch (err) {
         console.log(err);
-        res.status(400).json(err);
+        res.status(400).send(err.massage);
     }
 });
 exports.createTeacher = createTeacher;
@@ -33,7 +33,7 @@ const createStudent = (req, res) => __awaiter(void 0, void 0, void 0, function* 
     }
     catch (err) {
         console.log(err);
-        res.status(400).json(err);
+        res.status(400).send(err.massage);
     }
 });
 exports.createStudent = createStudent;
