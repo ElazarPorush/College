@@ -40,6 +40,10 @@ const TeacherSchema = new mongoose_1.Schema({
         required: [true, "please enter an email"],
         unique: true
     },
+    role: {
+        type: String,
+        default: "Teacher"
+    },
     class: {
         type: {
             name: {

@@ -44,6 +44,10 @@ const StudentSchema = new mongoose_1.Schema({
         type: mongoose_1.Schema.Types.ObjectId,
         required: [true, "you need to sign to class!"],
     },
+    role: {
+        type: String,
+        default: "Student"
+    },
     grades: [{
             subject: {
                 type: String

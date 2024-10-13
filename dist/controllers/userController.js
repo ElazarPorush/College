@@ -20,7 +20,7 @@ const createTeacher = (req, res) => __awaiter(void 0, void 0, void 0, function* 
     }
     catch (err) {
         console.log(err);
-        res.status(400).json(err);
+        res.status(400).send(err.massage);
     }
 });
 exports.createTeacher = createTeacher;
@@ -32,7 +32,8 @@ const createStudent = (req, res) => __awaiter(void 0, void 0, void 0, function* 
         });
     }
     catch (err) {
-        res.status(400).json(err);
+        console.log(err);
+        res.status(400).send(err.massage);
     }
 });
 exports.createStudent = createStudent;
@@ -40,7 +41,8 @@ const getStudents = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
     try {
     }
     catch (err) {
-        res.status(400).json(err);
+        console.log(err);
+        res.status(400).send(err.massage);
     }
 });
 exports.getStudents = getStudents;
@@ -48,7 +50,8 @@ const addGrade = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
     }
     catch (err) {
-        res.status(400).json(err);
+        console.log(err);
+        res.status(400).send(err.massage);
     }
 });
 exports.addGrade = addGrade;
@@ -56,7 +59,8 @@ const setGrade = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
     }
     catch (err) {
-        res.status(400).json(err);
+        console.log(err);
+        res.status(400).send(err.massage);
     }
 });
 exports.setGrade = setGrade;
@@ -64,7 +68,8 @@ const getAverage = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     try {
     }
     catch (err) {
-        res.status(400).json(err);
+        console.log(err);
+        res.status(400).send(err.massage);
     }
 });
 exports.getAverage = getAverage;
@@ -72,7 +77,8 @@ const getAveragePerStudent = (req, res) => __awaiter(void 0, void 0, void 0, fun
     try {
     }
     catch (err) {
-        res.status(400).json(err);
+        console.log(err);
+        res.status(400).send(err.massage);
     }
 });
 exports.getAveragePerStudent = getAveragePerStudent;
@@ -80,7 +86,8 @@ const getAveragePerSubject = (req, res) => __awaiter(void 0, void 0, void 0, fun
     try {
     }
     catch (err) {
-        res.status(400).json(err);
+        console.log(err);
+        res.status(400).send(err.massage);
     }
 });
 exports.getAveragePerSubject = getAveragePerSubject;
@@ -88,7 +95,8 @@ const getStudentGrade = (req, res) => __awaiter(void 0, void 0, void 0, function
     try {
     }
     catch (err) {
-        res.status(400).json(err);
+        console.log(err);
+        res.status(400).send(err.massage);
     }
 });
 exports.getStudentGrade = getStudentGrade;
@@ -96,7 +104,8 @@ const getMyGrade = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     try {
     }
     catch (err) {
-        res.status(400).json(err);
+        console.log(err);
+        res.status(400).send(err.massage);
     }
 });
 exports.getMyGrade = getMyGrade;

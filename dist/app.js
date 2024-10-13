@@ -9,11 +9,13 @@ const db_1 = __importDefault(require("./config/db"));
 const errorHendler_1 = require("./middlewares/errorHendler");
 const authRoute_1 = __importDefault(require("./routes/authRoute"));
 const userRoute_1 = __importDefault(require("./routes/userRoute"));
+const cookie_parser_1 = __importDefault(require("cookie-parser"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const port = process.env.PORT || 3000;
 // Middleware
 app.use(express_1.default.json());
+app.use((0, cookie_parser_1.default)());
 (0, db_1.default)();
 app.use("/api/auth", authRoute_1.default);
 app.use("/api/user", userRoute_1.default);
